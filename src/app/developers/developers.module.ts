@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListingComponent } from './listing/listing.component';
 import { RouterModule, Routes } from '@angular/router';
-import { PoPageModule } from '@po-ui/ng-components';
-
+import { PoPageModule, PoTableModule, PoTagModule  } from '@po-ui/ng-components';
 
 const routes: Routes = [
   {
@@ -19,6 +18,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     PoPageModule,
+    PoTableModule,
+    PoTagModule,
     RouterModule.forChild(routes),
   ]
 })
