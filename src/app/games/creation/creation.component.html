@@ -1,5 +1,37 @@
 <po-page-slide [p-title]="'Register Game'">
-    <p>creation works!</p>
+
+    <form [formGroup]="form">
+        <po-input 
+            class="po-md-12"
+            name="name" 
+            p-label="Name"  
+            formControlName="name"> 
+        </po-input>
+
+        <po-decimal 
+            class="po-md-12"
+            name="punctuation" 
+            p-label="Punctuation"  
+            formControlName="punctuation"
+            [p-decimals-length]="0"> 
+        </po-decimal>
+
+        <po-combo 
+            class="po-md-12"
+            developersCombo
+            name="combo" 
+            formControlName="developer"> 
+        </po-combo>
+    </form>
+
+
+    <po-button
+        class="po-md-12 po-mt-1"
+        p-type="primary"
+        [p-label]="'Register'"
+        (p-click)="save()"
+    >
+    </po-button>
+
+
 </po-page-slide>
-
-

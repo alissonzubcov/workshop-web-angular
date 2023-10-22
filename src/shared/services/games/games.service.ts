@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const path = `https://workshop-web-production.up.railway.app/games`;
+const path = `https://workshop-web-production.up.railway.app/api/games`;
 
 @Injectable({ providedIn: 'root' })
 export class GamesService {

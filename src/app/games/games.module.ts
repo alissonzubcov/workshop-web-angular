@@ -1,9 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListingComponent } from './listing/listing.component';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { PoPageModule } from '@po-ui/ng-components';
+import { PoButtonModule, PoFieldModule, PoPageModule } from '@po-ui/ng-components';
+import { DirectivesModule } from 'src/shared/directives/directives.module';
 import { CreationComponent } from './creation/creation.component';
+import { ListingComponent } from './listing/listing.component';
+
+
 
 
 const routes: Routes = [
@@ -19,7 +23,6 @@ const routes: Routes = [
   },
 ]
 
-
 @NgModule({
   declarations: [
     ListingComponent,
@@ -27,7 +30,11 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    PoPageModule, 
+    ReactiveFormsModule,
+    PoPageModule,
+    PoFieldModule,
+    DirectivesModule,
+    PoButtonModule,
     RouterModule.forChild(routes),
   ]
 })
