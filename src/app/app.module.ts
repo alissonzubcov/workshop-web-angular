@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PoModule } from '@po-ui/ng-components';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule, Routes  } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
