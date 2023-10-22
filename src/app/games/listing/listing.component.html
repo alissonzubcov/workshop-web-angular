@@ -1,5 +1,28 @@
 <po-page-default>
-    <p>listing works!</p>
+
+    <po-button 
+        class="po-md-3" 
+        p-label="New Game" 
+        [p-kind]="'primary'"
+        (p-click)="goToRegister()"> 
+    </po-button>
+
+
+    <po-table [p-hide-columns-manager]="true" class="po-md-12" [p-items]="itemsTable" [p-columns]="columns"
+        [p-infinite-scroll]="false"
+        [p-actions]="actions"
+        >
+        <ng-template p-table-cell-template let-column="column" let-row="row">
+            <div *ngIf="column.property === 'punctuation'">
+                <po-tag [p-value]="row.punctuation" [p-color]="getColorPoTag(row.punctuation)" p-text-color="white">
+                </po-tag>
+            </div>
+        </ng-template>
+    </po-table>
+
+    <po-loading-overlay *ngIf="loading"></po-loading-overlay>
+
+
 </po-page-default>
 
 

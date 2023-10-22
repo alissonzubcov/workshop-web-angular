@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { PoButtonModule, PoFieldModule, PoPageModule } from '@po-ui/ng-components';
+import { PoButtonModule, PoFieldModule, PoLoadingModule, PoPageModule, PoTableModule, PoTagModule } from '@po-ui/ng-components';
 import { DirectivesModule } from 'src/shared/directives/directives.module';
 import { CreationComponent } from './creation/creation.component';
 import { ListingComponent } from './listing/listing.component';
@@ -35,6 +35,9 @@ const routes: Routes = [
     PoFieldModule,
     DirectivesModule,
     PoButtonModule,
+    PoTableModule,
+    PoTagModule,
+    PoLoadingModule,
     RouterModule.forChild(routes),
   ]
 })

@@ -22,7 +22,11 @@ export class ListingComponent implements OnInit {
 
   constructor(private service: DevelopersService) {}
 
-  async ngOnInit(): Promise<void> {
+   ngOnInit(): void {
+    this.loadData();
+  }
+
+  private async loadData(){
     this.loading = true;
     await lastValueFrom(this.service.getAll())
     .then((resp) => this.itemsTable = resp)
