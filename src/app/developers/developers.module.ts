@@ -21,7 +21,6 @@ const routes: Routes = [
     CommonModule,
     PoPageModule,
     PoTableModule,
-    PoTagModule,
     PoLoadingModule,
     RouterModule.forChild(routes),
   ]
