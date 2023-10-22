@@ -14,16 +14,19 @@ export class ListingComponent implements OnInit {
 
   itemsTable: DeveloperListing[] = [];
 
-
   columns: PoTableColumn[] = [
     { property: 'name', label: "Name" },
   ];
 
+  loading = false;
+
   constructor(private service: DevelopersService) {}
 
   async ngOnInit(): Promise<void> {
+    this.loading = true;
     await lastValueFrom(this.service.getAll())
-    .then((resp) => this.itemsTable = resp);
+    .then((resp) => this.itemsTable = resp)
+    .finally(() => this.loading = false);
   }
 
 }
