@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PoNotificationService, PoPageSlideComponent } from '@po-ui/ng-components';
 import { DevelopersComboDirective } from 'src/shared/directives/developers-combo/developers-combo.directive';
 import { GamesService } from 'src/shared/services/games/games.service';
@@ -16,7 +17,7 @@ export class CreationComponent implements OnInit {
 
   form!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private service: GamesService, private poNotification: PoNotificationService) { }
+  constructor(private formBuilder: FormBuilder, private service: GamesService, private poNotification: PoNotificationService, private router: Router, private activeRoute: ActivatedRoute) { }
 
 
   ngOnInit(): void {
@@ -34,6 +35,10 @@ export class CreationComponent implements OnInit {
       );
 
     }
+  }
+
+  cancel(){
+    this.router.navigate([".."], {relativeTo: this.activeRoute})
   }
 
   private buildFormRegister() {

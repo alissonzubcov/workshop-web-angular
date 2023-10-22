@@ -1,4 +1,4 @@
-<po-page-slide [p-title]="'Register Game'">
+<po-page-slide [p-title]="'Register Game'" [p-hide-close]="true">
 
     <form [formGroup]="form">
         <po-input 
@@ -24,12 +24,21 @@
         </po-combo>
     </form>
 
+    <po-button
+    class="po-md-6 po-mt-1"
+    p-type="primary"
+    [p-label]="'Cancel'"
+    (p-click)="cancel()"
+    [p-danger]="true"
+>
+</po-button>
 
     <po-button
-        class="po-md-12 po-mt-1"
+        class="po-md-6 po-mt-1"
         p-type="primary"
         [p-label]="'Register'"
         (p-click)="save()"
+        [p-kind]="'primary'"
     >
     </po-button>
 
