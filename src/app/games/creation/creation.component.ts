@@ -31,13 +31,14 @@ export class CreationComponent implements OnInit {
         () => {
           this.poNotification.success('Registed with success!')
           this.poPageSlide.close();
+          this.goBack();
         }
       );
 
     }
   }
 
-  cancel(){
+  goBack(){
     this.router.navigate([".."], {relativeTo: this.activeRoute})
   }
 
